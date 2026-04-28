@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-gray-900 font-sans antialiased cursor-default;
+  }
+  
+  a, button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /* Reusable glassmorphism card style */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-soft rounded-2xl;
+  }
+  
+  /* Modern clean card */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft p-6;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white rounded-xl px-4 py-2 font-medium 
+           transition-all duration-300 hover:bg-primary-700 hover:shadow-float active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-gray-700 border border-gray-200 rounded-xl px-4 py-2 font-medium 
+           transition-all duration-300 hover:bg-gray-50 hover:border-gray-300 active:scale-95;
+  }
+  
+  .input-field {
+    @apply w-full rounded-xl border-gray-200 bg-gray-50 px-4 py-2 text-sm 
+           focus:border-primary-500 focus:bg-white focus:ring-2 focus:ring-primary-500/20 
+           transition-all outline-none;
+  }
+}
