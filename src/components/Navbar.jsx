@@ -8,16 +8,20 @@ export default function Navbar({ toggleSidebar }) {
   const { user, schoolInfo } = useUser();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+<<<<<<< HEAD
   
   const [notifications, setNotifications] = useState([
     { id: 1, title: 'Alice Freeman', message: 'sent a new message.', time: '2 minutes ago', type: 'message', read: false },
     { id: 2, title: 'System', message: 'System backup completed successfully.', time: '1 hour ago', type: 'system', read: false }
   ]);
 
+=======
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
   const profileRef = useRef(null);
   const notifRef = useRef(null);
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   const unreadCount = notifications.filter(n => !n.read).length;
 
   const markAllRead = () => {
@@ -28,6 +32,8 @@ export default function Navbar({ toggleSidebar }) {
     setNotifications(notifications.map(n => n.id === id ? { ...n, read: true } : n));
   };
 
+=======
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -81,9 +87,13 @@ export default function Navbar({ toggleSidebar }) {
             className="relative p-2 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-colors focus:outline-none"
           >
             <Bell className="h-5 w-5" />
+<<<<<<< HEAD
             {unreadCount > 0 && (
               <span className="absolute top-1 right-1.5 h-2 w-2 rounded-full bg-danger ring-2 ring-white"></span>
             )}
+=======
+            <span className="absolute top-1 right-1.5 h-2 w-2 rounded-full bg-danger ring-2 ring-white"></span>
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
           </motion.button>
 
           <AnimatePresence>
@@ -97,6 +107,7 @@ export default function Navbar({ toggleSidebar }) {
               >
                 <div className="p-4 border-b border-gray-100 bg-gray-50/50 flex justify-between items-center">
                   <h3 className="font-bold text-gray-900">Notifications</h3>
+<<<<<<< HEAD
                   {unreadCount > 0 && (
                     <span onClick={markAllRead} className="text-xs text-primary-600 font-semibold cursor-pointer hover:text-primary-700">Mark all read</span>
                   )}
@@ -127,6 +138,31 @@ export default function Navbar({ toggleSidebar }) {
                   onClick={() => { setIsNotificationsOpen(false); navigate('/messages'); }}
                   className="p-3 border-t border-gray-100 text-center bg-gray-50/50 cursor-pointer hover:bg-gray-100 transition-colors"
                 >
+=======
+                  <span className="text-xs text-primary-600 font-semibold cursor-pointer hover:text-primary-700">Mark all read</span>
+                </div>
+                <div className="max-h-[300px] overflow-y-auto">
+                  <div className="p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors cursor-pointer flex gap-3">
+                    <div className="h-8 w-8 rounded-full bg-primary-100 shrink-0 flex items-center justify-center text-primary-600">
+                      <MessageSquare className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-800"><span className="font-semibold">Alice Freeman</span> sent a new message.</p>
+                      <p className="text-xs text-gray-500 mt-0.5">2 minutes ago</p>
+                    </div>
+                  </div>
+                  <div className="p-4 hover:bg-gray-50 transition-colors cursor-pointer flex gap-3">
+                    <div className="h-8 w-8 rounded-full bg-success/10 shrink-0 flex items-center justify-center text-success">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-800">System backup completed successfully.</p>
+                      <p className="text-xs text-gray-500 mt-0.5">1 hour ago</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-3 border-t border-gray-100 text-center bg-gray-50/50 cursor-pointer hover:bg-gray-100 transition-colors">
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
                   <span className="text-sm text-primary-600 font-medium">View all notifications</span>
                 </div>
               </motion.div>

@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { GraduationCap, LogIn, CheckCircle, Eye, EyeOff, Info } from 'lucide-react';
+=======
+import { useNavigate, Link } from 'react-router-dom';
+import { GraduationCap, LogIn, CheckCircle, Eye, EyeOff } from 'lucide-react';
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
 import SchoolBackgroundAnimation from '../components/SchoolBackgroundAnimation';
 
 export default function Login() {
   const navigate = useNavigate();
+<<<<<<< HEAD
   const location = useLocation();
   const isDemo = location.state?.isDemo || false;
   
@@ -13,6 +19,10 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState(isDemo ? 'demo@smartschooler.dev' : 'admin@smartschool.edu');
   const [password, setPassword] = useState(isDemo ? '123456' : 'password');
+=======
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -59,6 +69,7 @@ export default function Login() {
                 Sign in to access your dashboard
               </p>
 
+<<<<<<< HEAD
               {isDemo && (
                 <div className="mt-4 bg-blue-50 text-blue-700 p-3 rounded-lg text-sm flex items-start gap-2 border border-blue-100 mx-4 sm:mx-10">
                   <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
@@ -67,6 +78,9 @@ export default function Login() {
               )}
 
               <div className="mt-6 bg-white py-8 px-4 shadow-xl sm:rounded-2xl sm:px-10 border border-gray-100">
+=======
+              <div className="mt-8 bg-white py-8 px-4 shadow-xl sm:rounded-2xl sm:px-10 border border-gray-100">
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
                 <form className="space-y-6" onSubmit={handleLogin}>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -79,8 +93,12 @@ export default function Login() {
                         type="email"
                         autoComplete="email"
                         required
+<<<<<<< HEAD
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+=======
+                        defaultValue="admin@smartschool.edu"
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
                         className="input-field w-full"
                       />
                     </div>
@@ -97,8 +115,12 @@ export default function Login() {
                         type={showPassword ? "text" : "password"}
                         autoComplete="current-password"
                         required
+<<<<<<< HEAD
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+=======
+                        defaultValue="password"
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
                         className="input-field w-full pr-10"
                       />
                       <button

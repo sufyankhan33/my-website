@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users, GraduationCap, Calendar, Clock, ChevronDown, Plus, X, CheckSquare } from 'lucide-react';
@@ -7,6 +8,67 @@ import { classesData, studentsData } from '../data/dummyData';
 export default function Classes() {
   const navigate = useNavigate();
   const [classes, setClasses] = useState(classesData);
+=======
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Users, GraduationCap, Calendar, Clock, ChevronDown, Plus, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+const initialClassesData = [
+  { 
+    id: 1, 
+    name: '10th A', 
+    teacher: 'Mr. John Keating', 
+    studentsCount: 34, 
+    type: 'Science',
+    timetable: [
+      { time: '08:00 AM', subject: 'Mathematics' },
+      { time: '09:00 AM', subject: 'Physics' },
+      { time: '10:15 AM', subject: 'Chemistry' },
+    ]
+  },
+  { 
+    id: 2, 
+    name: '10th B', 
+    teacher: 'Ms. Katherine Watson', 
+    studentsCount: 32, 
+    type: 'Arts',
+    timetable: [
+      { time: '08:00 AM', subject: 'Literature' },
+      { time: '09:00 AM', subject: 'History' },
+      { time: '10:15 AM', subject: 'Geography' },
+    ]
+  },
+  { 
+    id: 3, 
+    name: '11th Sci', 
+    teacher: 'Mr. Walter White', 
+    studentsCount: 28, 
+    type: 'Science',
+    timetable: [
+      { time: '08:00 AM', subject: 'Chemistry' },
+      { time: '09:00 AM', subject: 'Biology' },
+      { time: '10:15 AM', subject: 'Physics' },
+    ]
+  },
+  { 
+    id: 4, 
+    name: '9th A', 
+    teacher: 'Mrs. Valerie Frizzle', 
+    studentsCount: 35, 
+    type: 'General',
+    timetable: [
+      { time: '08:00 AM', subject: 'Science' },
+      { time: '09:00 AM', subject: 'Mathematics' },
+      { time: '10:15 AM', subject: 'English' },
+    ]
+  },
+];
+
+export default function Classes() {
+  const navigate = useNavigate();
+  const [classes, setClasses] = useState(initialClassesData);
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
   const [expandedId, setExpandedId] = useState(null);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [newClass, setNewClass] = useState({ name: '', teacher: '', type: 'General' });
@@ -50,7 +112,10 @@ export default function Classes() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {classes.map((cls, index) => {
           const isExpanded = expandedId === cls.id;
+<<<<<<< HEAD
           const studentsCount = studentsData.filter(s => s.class === cls.name).length;
+=======
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
           
           return (
             <motion.div
@@ -101,7 +166,11 @@ export default function Classes() {
                   <Users className="h-5 w-5 text-gray-400" />
                   <div>
                     <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Students</p>
+<<<<<<< HEAD
                     <p className="font-medium text-gray-900 text-sm">{studentsCount} Total</p>
+=======
+                    <p className="font-medium text-gray-900 text-sm">{cls.studentsCount} Total</p>
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
                   </div>
                 </div>
               </div>
@@ -136,6 +205,7 @@ export default function Classes() {
                       ))}
                     </div>
                     
+<<<<<<< HEAD
                     <div className="mt-6 flex flex-col sm:flex-row gap-3">
                       <button onClick={() => navigate(`/students?class=${encodeURIComponent(cls.name)}`)} className="btn-secondary w-full justify-center flex items-center gap-2">
                         <Users className="h-4 w-4" /> View Students
@@ -143,6 +213,10 @@ export default function Classes() {
                       <button onClick={() => navigate(`/attendance?class=${encodeURIComponent(cls.name)}`)} className="btn-primary w-full justify-center flex items-center gap-2">
                         <CheckSquare className="h-4 w-4" /> Mark Attendance
                       </button>
+=======
+                    <div className="mt-6 flex gap-3">
+                      <button onClick={() => navigate(`/students?class=${encodeURIComponent(cls.name)}`)} className="btn-primary w-full justify-center">View Student List</button>
+>>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
                     </div>
                   </motion.div>
                 )}
