@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Save, CheckCircle, XCircle, ChevronDown } from 'lucide-react';
@@ -22,27 +21,6 @@ export default function Attendance() {
     setAttendance(initialAttendance);
   }, [classFilter, currentStudents.length]);
 
-=======
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Save, CheckCircle, XCircle } from 'lucide-react';
-
-const studentsList = [
-  { id: 1, name: 'Alice Freeman', rollNo: '101' },
-  { id: 2, name: 'Bobby Singer', rollNo: '102' },
-  { id: 3, name: 'Charlie Dean', rollNo: '103' },
-  { id: 4, name: 'Diana Prince', rollNo: '104' },
-  { id: 5, name: 'Evan Wright', rollNo: '105' },
-];
-
-export default function Attendance() {
-  const [attendance, setAttendance] = useState(
-    studentsList.reduce((acc, student) => ({ ...acc, [student.id]: 'Present' }), {})
-  );
-  const [isSaving, setIsSaving] = useState(false);
-  const [saved, setSaved] = useState(false);
-
->>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
   const toggleStatus = (id, status) => {
     setAttendance(prev => ({ ...prev, [id]: status }));
     setSaved(false);
@@ -62,7 +40,6 @@ export default function Attendance() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Mark Attendance</h1>
-<<<<<<< HEAD
           <div className="flex items-center gap-2 mt-2">
             <div className="relative">
               <select 
@@ -82,9 +59,6 @@ export default function Attendance() {
             <span className="text-gray-400">•</span>
             <p className="text-gray-500 text-sm">{new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
           </div>
-=======
-          <p className="text-gray-500 text-sm mt-1">Class 10th A • {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
->>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
         </div>
         
         <div className="flex gap-4 items-center">
@@ -118,32 +92,21 @@ export default function Attendance() {
         </div>
         
         <div className="divide-y divide-gray-100">
-<<<<<<< HEAD
           {currentStudents.length === 0 ? (
             <div className="p-8 text-center text-gray-500">No students found in this class.</div>
           ) : currentStudents.map((student) => {
-=======
-          {studentsList.map((student) => {
->>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
             const status = attendance[student.id];
             
             return (
               <div key={student.id} className="flex justify-between items-center px-6 py-4 hover:bg-gray-50/50 transition-colors">
                 <div className="flex items-center gap-4">
                   <div className="h-10 w-10 bg-gray-100 text-gray-600 font-bold rounded-full flex items-center justify-center">
-<<<<<<< HEAD
                     {student.avatar || student.name.charAt(0)}
                   </div>
                   <div>
                     <Link to={`/students/${student.id}`} state={{ student }} className="font-bold text-gray-900 hover:text-primary-600 transition-colors">
                       {student.name}
                     </Link>
-=======
-                    {student.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900">{student.name}</p>
->>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
                     <p className="text-xs text-gray-500 font-medium tracking-wide">Roll: {student.rollNo}</p>
                   </div>
                 </div>

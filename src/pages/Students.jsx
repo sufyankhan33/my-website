@@ -1,27 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-<<<<<<< HEAD
 import { Plus, Search, Filter, Edit, Trash2, Eye, X, XCircle, CheckSquare } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { studentsData } from '../data/dummyData';
 
 export default function Students() {
   const [students, setStudents] = useState(studentsData);
-=======
-import { Plus, Search, Filter, MoreVertical, Edit, Trash2, Eye, X, XCircle } from 'lucide-react';
-import { Link, useSearchParams } from 'react-router-dom';
-
-const initialStudents = [
-  { id: 1, name: 'Alice Freeman', class: '10th A', rollNo: '101', status: 'Active', avatar: 'AF' },
-  { id: 2, name: 'Bobby Singer', class: '10th B', rollNo: '102', status: 'Active', avatar: 'BS' },
-  { id: 3, name: 'Charlie Dean', class: '9th A', rollNo: '901', status: 'Suspended', avatar: 'CD' },
-  { id: 4, name: 'Diana Prince', class: '11th Science', rollNo: '1105', status: 'Active', avatar: 'DP' },
-  { id: 5, name: 'Evan Wright', class: '10th A', rollNo: '103', status: 'Active', avatar: 'EW' },
-];
-
-export default function Students() {
-  const [students, setStudents] = useState(initialStudents);
->>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
   const [search, setSearch] = useState('');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
@@ -161,11 +145,7 @@ export default function Students() {
               {/* Class & Roll */}
               <div className="col-span-2 flex justify-between md:block">
                 <span className="md:hidden text-gray-500 text-sm">Class:</span>
-<<<<<<< HEAD
                 <Link to="/classes" className="font-medium text-primary-600 hover:text-primary-800 transition-colors">{student.class}</Link>
-=======
-                <span className="font-medium text-gray-700">{student.class}</span>
->>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
               </div>
               <div className="col-span-2 flex justify-between md:block">
                 <span className="md:hidden text-gray-500 text-sm">Roll No:</span>
@@ -185,7 +165,6 @@ export default function Students() {
               </div>
 
               {/* Actions */}
-<<<<<<< HEAD
               <div className="col-span-2 flex items-center justify-end gap-1 md:opacity-0 group-hover:opacity-100 transition-opacity">
                 <Link to={`/attendance?class=${encodeURIComponent(student.class)}`} className="p-2 text-gray-400 hover:text-success hover:bg-success/10 rounded-lg transition-colors" title="Mark Attendance">
                   <CheckSquare className="h-4 w-4" />
@@ -197,16 +176,6 @@ export default function Students() {
                   <Edit className="h-4 w-4" />
                 </button>
                 <button onClick={() => deleteStudent(student.id)} className="p-2 text-gray-400 hover:text-danger-dark hover:bg-danger/10 rounded-lg transition-colors" title="Delete Student">
-=======
-              <div className="col-span-2 flex items-center justify-end gap-2 md:opacity-0 group-hover:opacity-100 transition-opacity">
-                <Link to={`/students/${student.id}`} state={{ student }} className="p-2 text-gray-400 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors">
-                  <Eye className="h-4 w-4" />
-                </Link>
-                <button onClick={() => openEditModal(student)} className="p-2 text-gray-400 hover:text-warning-dark hover:bg-warning/10 rounded-lg transition-colors">
-                  <Edit className="h-4 w-4" />
-                </button>
-                <button onClick={() => deleteStudent(student.id)} className="p-2 text-gray-400 hover:text-danger-dark hover:bg-danger/10 rounded-lg transition-colors">
->>>>>>> 8c21f9c51436510471076b06366ab8a177b4483e
                   <Trash2 className="h-4 w-4" />
                 </button>
               </div>
